@@ -7,6 +7,8 @@ const protectedRoutes = createRouteMatcher([
   '/transformations/(.*)'
 ])
 
+// publicRoutes: ['/api/webhooks/clerk']
+
 export default clerkMiddleware((auth, req) =>{
   if(protectedRoutes(req)) auth().protect();
 });
